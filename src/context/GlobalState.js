@@ -16,21 +16,21 @@ export const GlobalContext = createContext(initialState);
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
-  function removeEmployee(id) {
+  const removeEmployee = (id) => {
     dispatch({
       type: "REMOVE_EMPLOYEE",
       payload: id
     });
   }
 
-  function addEmployee(employees) {
+  const  addEmployee = (employees) => {
     dispatch({
       type: "ADD_EMPLOYEES",
       payload: employees
     });
   }
 
-  function editEmployee(employees) {
+  const editEmployee = (employees) =>{
     dispatch({
       type: "EDIT_EMPLOYEE",
       payload: employees
